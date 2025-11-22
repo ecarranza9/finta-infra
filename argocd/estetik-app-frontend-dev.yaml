@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/TU_USER/estetik-infra.git'  # tu repo de infra
+    repoURL: 'https://github.com/ecarranza9/finta-infra.git'  # tu repo de infra
     targetRevision: master
     path: manifests/estetik-app-frontend/dev
   destination:

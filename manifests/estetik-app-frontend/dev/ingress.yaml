@@ -7,7 +7,7 @@ metadata:
     kubernetes.io/ingress.class: nginx
 spec:
   rules:
-    - host: estetik-app-frontend.192.168.49.2.nip.io   # luego lo cambiamos por algo real
+    - host: estetik-app   # luego lo cambiamos por algo real
       http:
         paths:
           - path: /

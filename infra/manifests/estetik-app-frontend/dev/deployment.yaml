@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: estetik-app-frontend
+  namespace: estetik-dev
+  labels:
+    app: estetik-app-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: estetik-app-frontend
+  template:
+    metadata:
+      labels:
+        app: estetik-app-frontend
+    spec:
+      containers:
+        - name: estetik-app-frontend
+          image: ghcr.io/ecarranza9/estetik-app-frontend:latest  # ← CAMBIAR TU_USER
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "200m"
+              memory: "256Mi"
+      # Si la imagen es pública en GHCR, no hace falta imagePullSecrets
+      imagePullSecrets: []

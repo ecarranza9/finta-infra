@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: estetik-app-frontend
+  namespace: estetik-dev
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: estetik-dev.tudominio.com   # luego lo cambiamos por algo real
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: estetik-app-frontend
+                port:
+                  number: 80
